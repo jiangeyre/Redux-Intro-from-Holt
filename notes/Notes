@@ -12,3 +12,27 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(SearchParams);
+
+
+const mapStateToProps = ({ theme }) => ({ theme });
+
+const WrappedDetails = connect(mapStateToProps)(Details);
+
+export default function DetailsErrorBoundary(props){
+    return (
+        <ErrorBoundary>
+            <WrappedDetails {...props} />
+        </ErrorBoundary>
+    );
+}
+
+
+// doesn't live in the component anymore but in Redux
+
+Very compelling Redux for Brian Holt:
+- can time travel with Redux / time travel debugging
+- transactional programming
+- don't apply that one and reapply the other ones
+- test: generates unit tests (jest)
+- redux dev tools
+
